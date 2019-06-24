@@ -5,8 +5,8 @@ colors = ["white", "black", "orange", "light_green", "green", "dark_green",
 color_trans = {item: i for i, item in enumerate(colors, 1)}
 color_trans["empty"] = 0
 
-puzzel_1_code = \
-["white","orange","blue","dark_purple",         #1
+puzzel_1_code = [\
+"white","orange","blue","dark_purple",          #1
 "black","orange","light_green","yellow",        #2
 "light_green","pink","dark_green","green",      #3
 "dark_green","dark_blue","yellow","pink",       #4
@@ -25,3 +25,10 @@ puzzel_1_code = \
 "empty","empty","empty","empty"]                #17
 
 puzzel_1 = [color_trans[item] for item in puzzel_1_code]
+
+puzzel_2_code = [\
+"white", "white", "white", "empty",
+"empty", "empty", "empty", "empty",
+"white", "empty", "empty", "empty"]
+
+puzzel_2 = [color_trans[item] for item in puzzel_2_code]
