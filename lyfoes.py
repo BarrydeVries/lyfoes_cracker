@@ -50,6 +50,12 @@ class Lyfoes:
             if(self.get_tube(index)[i] == 0):
                 return self.get_tube(index)[i-1], i, index
         return self.get_tube(index)[3], 4, index
+    
+    def tube_finished(self, index):
+        tube = self.get_tube(index)
+        if(tube[0] == tube[1] and tube[1] == tube[2] and tube[2] == tube[3]):
+            return True
+        return False
 
     # Determine wheter a move that starts at start and ends at end is valid.
     # Then append it to a list of all possible moves, with the appropriate indexes
@@ -57,13 +63,15 @@ class Lyfoes:
     def valid_move(self, start, end, moves):
         start_move = self.top_value(start)
         end_move = self.top_value(end)
+        if(self.tube_finished(start)):
+            return
 
         # Ensure the start tube is nonempty.
         if(start_move[0] != 0 ):
             if(end_move[0] == 0 or (end_move[1] != 4 and end_move[0] == start_move[0])):
                 moves.append((start_move, end_move))
 
-    # Get all valid moves in curren position (as list of tuples).
+    # Get all valid moves in current position (as list of tuples).
     def valid_moves(self):
         move_list = []
         for start_index in range(self.tubes):

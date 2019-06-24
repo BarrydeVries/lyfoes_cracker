@@ -18,8 +18,7 @@ def solve_puzzel():
     history = []
 
     while stack:
-        print(len(history))
-        [print(item.config) for item in history]
+        print(len(history), len(stack))
         puzzel = stack.pop()
         if not check_history(puzzel, history):
             history.append(puzzel)
