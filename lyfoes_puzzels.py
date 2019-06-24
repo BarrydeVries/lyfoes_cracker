@@ -32,3 +32,20 @@ puzzel_2_code = [\
 "white", "empty", "empty", "empty"]
 
 puzzel_2 = [color_trans[item] for item in puzzel_2_code]
+
+puzzel_3_code = [\
+"yellow", "blue", "dark_purple", "red",
+"dark_blue", "yellow", "yellow", "purple",
+"red", "pink", "orange", "white",
+"green", "light_blue", "purple", "dark_blue",
+"dark_blue", "light_blue", "pink", "yellow",
+"orange", "red", "light_blue", "dark_purple",
+"purple", "blue", "green", "dark_blue",
+"red", "blue", "dark_purple", "green",
+"pink", "white", "green", "white",
+"orange", "pink", "blue", "orange",
+"white", "dark_purple", "purple", "light_blue",
+"empty", "empty", "empty", "empty",
+"empty", "empty", "empty", "empty"]
+
+puzzel_3 = [color_trans[item] for item in puzzel_3_code]

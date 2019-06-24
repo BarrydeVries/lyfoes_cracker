@@ -1,7 +1,7 @@
 import lyfoes
 import copy
 import sys
-from lyfoes_puzzels import puzzel_1 as import_puzzel
+from lyfoes_puzzels import puzzel_3 as import_puzzel
 
 ''' Make function to input command line arguments, also allow for imports'''
 
@@ -18,20 +18,21 @@ def solve_puzzel():
     history = []
 
     while stack:
-        print(len(history), len(stack))
+        print(len(stack), len(history))
         puzzel = stack.pop()
         if not check_history(puzzel, history):
             history.append(puzzel)
             possible_moves = puzzel.valid_moves()
             
             for move in possible_moves:
-                copied_puzzel = copy.deepcopy(puzzel)
-                copied_puzzel.apply_move(move)
+                copied_puzzel = lyfoes.Lyfoes(copy.deepcopy(puzzel.config))
+                copied_puzzel.moves = copy.deepcopy(puzzel.moves)
 
+                copied_puzzel.apply_move(move)
                 if copied_puzzel.is_finished():
-                    print(copied_puzzel.moves)
+                    exit()
                 else:
-                    stack.append(copied_puzzel)
+                    stack = [copied_puzzel] + stack
 
     print("not solvable")
 
