@@ -30,6 +30,7 @@ def solve_puzzel():
 
                 copied_puzzel.apply_move(move)
                 if copied_puzzel.is_finished():
+                    print(copied_puzzel.moves)
                     exit()
                 else:
                     stack = [copied_puzzel] + stack
